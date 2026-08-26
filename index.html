@@ -1,38 +1,275 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Online center</title>
-    </head>
-  <body>
-    <h1 style=" background.color:lightblue;color:red;text-align:center;text-shadow:2px 2px 3px black;">
-      ONLINE-CENTER <br> Mahipal Bus-Stand<br>Mahipal<br>
-      Mob. 9733175289
-    </h1> 
-    <div style="border:2px solid blue;padding:6px;text-align:center;
-      text-shadow:2px 2px 3px red;">Prop:- Rezaul Hoque</div>
-      <div style="background-color:green;color:white;text-align:center;">
-      বিভিন্ন পরিষেবার জন্য এখানে আসুন
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Center - Mahipal</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f5fff3, #ffffff, #fffbe8);
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      color: #222;
+    }
+
+    .page {
+      width: 94%;
+      max-width: 1050px;
+      margin: 24px auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #5b6ee1;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at center, rgba(255,215,0,.18), transparent 55%),
+        linear-gradient(135deg, #ffffff, #fffdf3);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        12deg,
+        transparent 0 22px,
+        rgba(255, 205, 50, .10) 22px 24px
+      );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-badge {
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      border: 7px solid #0b7a2a;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 4px #fff, 0 4px 12px rgba(0,0,0,.15);
+      color: #0b7a2a;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+      font-size: 14px;
+    }
+
+    .brand-badge .pc {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #d51010;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1;
+      text-shadow: 2px 2px 3px #888;
+    }
+
+    .address {
+      margin-top: 8px;
+      color: #d51010;
+      font-weight: 800;
+      font-size: clamp(22px, 3.4vw, 36px);
+      line-height: 1.25;
+      text-shadow: 1px 1px 2px #aaa;
+    }
+
+    .owner {
+      text-align: center;
+      margin: 14px 0 10px;
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 700;
+      color: #75266f;
+    }
+
+    .service-title {
+      background: linear-gradient(#0b8f2b, #006c1c);
+      color: white;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 800;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,.15);
+    }
+
+    .services {
+      border: 2px solid #6eae5e;
+      border-top: 0;
+      border-radius: 0 0 18px 18px;
+      background: rgba(255,255,255,.94);
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.10);
+    }
+
+    .service-list {
+      width: min(100%, 700px);
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 11px 8px;
+      border-bottom: 1px dashed #bbb;
+      font-size: clamp(18px, 2.3vw, 26px);
+      line-height: 1.35;
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .icon {
+      width: 36px;
+      flex: 0 0 36px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .phone {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone a {
+      display: inline-block;
+      text-decoration: none;
+      background: #fff;
+      border: 2px solid #15953d;
+      color: #d31515;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 25px);
+      box-shadow: 0 4px 10px rgba(0,0,0,.10);
+    }
+
+    .footer {
+      margin-top: 14px;
+      text-align: center;
+      background: linear-gradient(90deg, #083b92, #0c5cc4, #083b92);
+      color: white;
+      font-weight: 800;
+      font-size: clamp(17px, 2.2vw, 24px);
+      padding: 11px;
+      border-radius: 14px;
+      box-shadow: 0 5px 14px rgba(0,0,0,.16);
+    }
+
+    @media (min-width: 760px) {
+      .hero-content {
+        display: grid;
+        grid-template-columns: 130px 1fr 130px;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-badge {
+        margin: 0 auto;
+      }
+
+      .desktop-art {
+        font-size: 84px;
+      }
+    }
+
+    @media (max-width: 759px) {
+      .desktop-art {
+        display: none;
+      }
+
+      .page {
+        width: 96%;
+        margin: 12px auto;
+      }
+
+      .hero {
+        padding: 20px 12px;
+        border-radius: 20px;
+      }
+
+      .services {
+        padding: 14px 10px;
+      }
+
+      .service-list li {
+        padding: 10px 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="brand-badge">
+          <div>
+            <span class="pc">💻</span>
+            ONLINE-CENTER<br>MAHIPAL
+          </div>
+        </div>
+
+        <div>
+          <h1>ONLINE-CENTER</h1>
+          <div class="address">
+            Mahipal Bus-Stand<br>
+            Mahipal<br>
+            Mob. 9733175289
+          </div>
+        </div>
+
+        <div class="desktop-art">🖥️</div>
       </div>
-  <div style="text-align:center;">
-  <ul style="
-    display:inline-block;
-    text-align:left;
-    margin:12px auto;
-    padding-left:25px;
-  ">
-    <li>গভার্ণমেণ্ট ফরম ফিলাপ</li>
-    <li>বিদ্যালয়ের অনলাইন কাজ</li>
-    <li>অনলাইন পরিষেবার জন্য পরামর্শ</li>
-    <li>সমস্ত রকম জেরক্সের কাজ</li>
-    <li>অতি যত্নসহকারে পরিষেবা প্রদান</li>
-    <li>
-      প্রয়োজনে ফোন করে আসবেন<br>
-      Phone No. 919733175289
-    </li>
-  </ul>
-</div>
-    
-    
-  </body>
-  
+    </section>
+
+    <div class="owner">❧ Prop:- Rezaul Hoque ❧</div>
+
+    <div class="service-title">✦ বিভিন্ন পরিষেবার জন্য এখানে আসুন ✦</div>
+
+    <section class="services">
+      <ul class="service-list">
+        <li><span class="icon">📋</span><span>গভার্ণমেণ্ট ফরম ফিলাপ</span></li>
+        <li><span class="icon">🎓</span><span>বিদ্যালয়ের অনলাইন কাজ</span></li>
+        <li><span class="icon">📝</span><span>অনলাইনে পরীক্ষার জন্য সহায়তা</span></li>
+        <li><span class="icon">📄</span><span>সমস্ত রকম ডকুমেন্টের কাজ</span></li>
+        <li><span class="icon">🖨️</span><span>অতি সুলভমূল্যে সাদাকালো প্রিন্ট</span></li>
+        <li><span class="icon">☎️</span><span>প্রয়োজনে ফোন করে আসবেন</span></li>
+      </ul>
+
+      <div class="phone">
+        <a href="tel:919733175289">☎ Phone No. 919733175289</a>
+      </div>
+    </section>
+
+    <div class="footer">⭐ আপনার সেবা, আমাদের দায়িত্ব ⭐</div>
+
+  </main>
+</body>
 </html>
+
