@@ -1,4 +1,4 @@
-const CACHE_NAME = "online-center-v1";
+const CACHE_NAME = "Online-center-v1";
 
 const FILES_TO_CACHE = [
   "./",
