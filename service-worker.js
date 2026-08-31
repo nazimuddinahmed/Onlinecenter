@@ -1,4 +1,4 @@
-const CACHE_NAME = "rezaul-online-v1";
+const CACHE_NAME = "onlinecenter-v2";
 
 const filesToCache = [
   "./",
