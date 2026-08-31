@@ -11,12 +11,14 @@
     {
       "src": "./center.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png", 
+      "purpose":"any"
     },
     {
       "src": "./center.png",
       "sizes": "512×512",
-      "type": "image/png"
+      "type": "image/png", 
+      "purpose":"any"
     }
   ]
 }
