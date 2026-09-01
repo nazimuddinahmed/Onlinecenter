@@ -1,24 +1,24 @@
 {
   "name": "Rezaul Online & Xerox",
   "short_name": "Rezaul Online",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/Onlinecenter/",
+  "scope": "/Onlinecenter/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#087b32",
   "description": "Rezaul Online & Xerox - Mahipal Bus-Stand",
   "icons": [
     {
-      "src": "/onlinecenter/tabassum.png",
+      "src": "tabassum.png",
       "sizes": "192x192",
-      "type": "image/png", 
-      "purpose":"any"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/onlinecenter/tabassum.png",
-      "sizes": "512×512",
-      "type": "image/png", 
-      "purpose":"any"
+      "src": "tabassum.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
