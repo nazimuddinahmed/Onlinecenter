@@ -1,0 +1,23 @@
+{
+  "name": "Rezaul Online & Xerox",
+  "short_name": "Onlinecenter",
+  "description": "বিভিন্ন অনলাইন পরিষেবা এবং গভার্ণমেণ্ট ফরম ফিলাপের ডিজিটাল প্ল্যাটফর্ম।",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
