@@ -235,7 +235,56 @@
   
   <meta name="google-site-verification" content="kErlycJ2h5XP6XwEEptE4U8OpNTssktqlPBt60PrEuU" 
     />
-  <
+  <script>
+function getSystemInfo() {
+  const ua = navigator.userAgent;
+  let os = "Unknown OS";
+  let browser = "Unknown Browser";
+
+  if (ua.indexOf("Win") !== -1) os = "Windows";
+  else if (ua.indexOf("Mac") !== -1) os = "macOS";
+  else if (ua.indexOf("Linux") !== -1) os = "Linux";
+  else if (/Android/.test(ua)) os = "Android";
+  else if (/iPhone|iPad|iPod/.test(ua)) os = "iOS";
+
+  if (ua.indexOf("Firefox") !== -1) browser = "Mozilla Firefox";
+  else if (ua.indexOf("Opera") !== -1 || ua.indexOf("OPR") !== -1) browser = "Opera";
+  else if (ua.indexOf("Edge") !== -1 || ua.indexOf("Edg") !== -1) browser = "Microsoft Edge";
+  else if (ua.indexOf("Chrome") !== -1) browser = "Google Chrome";
+  else if (ua.indexOf("Safari") !== -1) browser = "Apple Safari";
+
+  return { os, browser };
+}
+
+function sendEmailReport() {
+  alert("অনুগ্রহ করে অপেক্ষা করুন, আপনার সিস্টেমের তথ্য প্রসেস হচ্ছে এবং ইমেইল অ্যাপ ওপেন হচ্ছে...");
+
+  html2canvas(document.body, { useCORS: true, logging: false }).then(canvas => {
+    const systemInfo = getSystemInfo();
+    
+    // ⚠️ target-email@example.com কেটে আপনার নিজের আসল জিমেইল আইডি বসিয়ে দিন
+    const myEmail = "target-email@example.com"; 
+    
+    const emailSubject = encodeURIComponent("নতুন বাগ এবং সিস্টেম রিপোর্ট 🐛");
+    
+    const emailBody = encodeURIComponent(
+      `প্রিয় ডেভলপার,\n\n` +
+      `আপনার অ্যাপে একটি সমস্যা দেখা দিয়েছে। নিচে সিস্টেমের বিবরণ দেওয়া হলো:\n\n` +
+      `📌 Operating System (OS): ${systemInfo.os}\n` +
+      `📌 Browser: ${systemInfo.browser}\n` +
+      `📌 পেজের লিংক (URL): ${window.location.href}\n` +
+      `📌 সময় (Timestamp): ${new Date().toLocaleString()}\n\n` +
+      `⚠️ [নোট]: সিকিউরিটি পলিসির কারণে ইমেইলের ভেতরে সরাসরি ছবি এটাচ করা যায় না। ` +
+      `আপনি চাইলে এই ইমেইলটি পাঠানোর পর ম্যানুয়ালি গ্যালারি থেকে স্ক্রিনশটটি এই মেইলে যুক্ত (Attach) করে দিতে পারেন।`
+    );
+
+    window.location.href = `mailto:${myEmail}?subject=${emailSubject}&body=${emailBody}`;
+  });
+}
+
+// বোতামের সাথে ফাংশনটি যুক্ত করা হলো
+document.getElementById('reportBtn').addEventListener('click', sendEmailReport);
+
 </script>
 </head>
 
